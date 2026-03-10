@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>التقرير الختامي للمبادرة</title>
+  <meta content="#6b2f3b" name="theme-color"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800;900&family=Almarai:wght@300;400;700;800&family=Cairo:wght@400;700;800;900;1000&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --maroon: #6b2f3b;
+      --maroon-soft: #8a4952;
+      --teal: #2fb6af;
+      --teal-deep: #1d8f89;
+      --sand: #f3ecdc;
+      --sand-deep: #e7dcc5;
+      --gold: #c6a06d;
+      --rust: #b9604d;
+      --ink: #2d241f;
+      --muted: #766658;
+      --line: rgba(89, 57, 49, .14);
+      --shadow: 0 22px 50px rgba(78, 52, 42, .16);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --app-font: "Saudi", "Saudi Bold", "Alexandria", "Almarai", "Tajawal", system-ui, sans-serif;
+      --display-font: "Saudi", "Saudi Bold", "Alexandria", "Cairo", "Almarai", "Tajawal", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--app-font);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(47,182,175,.20), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(198,160,109,.16), transparent 25%),
+        linear-gradient(180deg, #f8f3e7 0%, #efe8d7 46%, #e7dcc8 100%);
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .14;
+      background:
+        radial-gradient(circle at 30% 12%, rgba(255,255,255,.85), transparent 16%),
+        radial-gradient(circle at 70% 34%, rgba(255,255,255,.58), transparent 18%),
+        radial-gradient(circle at 48% 72%, rgba(255,255,255,.34), transparent 16%);
+      mix-blend-mode: screen;
+    }
+
+    .shell {
+      width: min(1480px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 42px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: 12px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.83), rgba(255,255,255,.72));
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      border-radius: 999px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 70px;
+      height: 88px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 12px rgba(107,47,59,.14));
+      flex: 0 0 auto;
+    }
+
+    .brand-copy .eyebrow {
+      margin: 0 0 4px;
+      color: var(--teal-deep);
+      font-size: .95rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(1.55rem, 2.5vw, 2.3rem);
+      font-weight: 900;
+      color: #9d3a35;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .brand-copy .sub {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+      font-weight: 700;
+    }
+
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .topnav a {
+      text-decoration: none;
+      color: var(--maroon);
+      background: rgba(107,47,59,.08);
+      border: 1px solid rgba(107,47,59,.12);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .topnav a:hover {
+      background: rgba(47,182,175,.14);
+      color: var(--teal-deep);
+      transform: translateY(-1px);
+    }
+
+    .hero-head {
+      padding: 28px 10px 6px;
+      text-align: center;
+    }
+
+    .hero-head h2 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(2.55rem, 4.2vw, 4.6rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: #9d3a35;
+      text-shadow: 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .hero-head p {
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      font-weight: 700;
+      max-width: 720px;
+    }
+
+    .section-block {
+      margin-top: 24px;
+      padding: 26px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.6));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .title-mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(47,182,175,.16), rgba(107,47,59,.10));
+      border: 1px solid rgba(47,182,175,.18);
+      color: var(--maroon);
+      font-size: 1.15rem;
+      font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-family: var(--display-font);
+      font-size: clamp(1.45rem, 2.2vw, 2.3rem);
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      font-weight: 700;
+    }
+
+    .section-chip {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(47,182,175,.16), rgba(198,160,109,.18));
+      color: var(--teal-deep);
+      border: 1px solid rgba(47,182,175,.18);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .page-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(107,47,59,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(249,245,236,.9));
+      box-shadow: 0 18px 36px rgba(82, 59, 47, .14);
+    }
+
+    .page-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 16px 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,0));
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .page-top h4 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--maroon);
+      text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+
+    .page-index {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.84);
+      border: 1px solid rgba(107,47,59,.12);
+      color: var(--teal-deep);
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .page-media {
+      aspect-ratio: 16 / 11;
+      background: #ece5d4;
+      overflow: hidden;
+    }
+
+    .page-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .page-caption {
+      padding: 14px 16px 18px;
+      color: var(--muted);
+      font-size: .96rem;
+      font-weight: 700;
+      line-height: 1.8;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.75)),
+        linear-gradient(180deg, rgba(47,182,175,.04), rgba(107,47,59,.03));
+    }
+
+    .identity-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .identity-head h3 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .identity-head p {
+      margin: 8px 0 0;
+      color: var(--maroon);
+      font-size: clamp(1.15rem, 2vw, 1.7rem);
+      font-weight: 900;
+      line-height: 1.8;
+    }
+
+    .section-logo {
+      width: 72px;
+      height: 88px;
+      object-fit: contain;
+      opacity: .9;
+      filter: drop-shadow(0 12px 14px rgba(107,47,59,.12));
+    }
+
+    .table-shell {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(47,182,175,.18);
+      background: rgba(255,255,255,.72);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.56);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+    }
+
+    thead th {
+      background: linear-gradient(135deg, var(--teal), #39bcb5);
+      color: white;
+      padding: 18px 20px;
+      font-size: 1.12rem;
+      font-weight: 900;
+      text-align: center;
+      border-left: 1px solid rgba(255,255,255,.18);
+    }
+
+    tbody td {
+      padding: 22px 20px;
+      border-top: 1px solid rgba(89,57,49,.08);
+      border-left: 1px solid rgba(89,57,49,.08);
+      vertical-align: middle;
+      background: rgba(244,239,225,.74);
+    }
+
+    tbody td:last-child,
+    thead th:last-child {
+      border-left: 0;
+    }
+
+    .col-section {
+      width: 18%;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      background: rgba(222, 228, 210, .85);
+    }
+
+    .col-desc {
+      width: 62%;
+      font-size: 1.2rem;
+      line-height: 2.05;
+      font-weight: 700;
+      color: #352b24;
+    }
+
+    .col-link {
+      width: 20%;
+      text-align: center;
+      background: rgba(255,255,255,.7);
+    }
+
+    .link-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(107,47,59,.08);
+      color: var(--maroon);
+      border: 1px dashed rgba(107,47,59,.22);
+      font-size: 1rem;
+      font-weight: 900;
+      min-width: 150px;
+      text-decoration: none;
+    }
+
+    .link-badge.disabled {
+      background: rgba(118,102,88,.08);
+      color: var(--muted);
+      border-color: rgba(118,102,88,.2);
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .98rem;
+      font-weight: 700;
+    }
+
+    .brand-copy h1,
+    .section-head h3,
+    .identity-head h3,
+    .identity-head p,
+    .page-top h4,
+    thead th,
+    .col-section,
+    .title-mark,
+    .link-badge {
+      font-family: var(--display-font);
+    }
+
+    .section-intro {
+      padding: 4px 0 18px;
+      margin-bottom: 8px;
+    }
+
+    .section-intro-text {
+      width: 100%;
+      text-align: right;
+    }
+
+    .section-intro-text p {
+      margin: 0;
+      color: #4a3b32;
+      font-size: clamp(1.24rem, 1.85vw, 1.68rem);
+      line-height: 1.95;
+      font-weight: 700;
+      max-width: 920px;
+    }
+
+    .section-intro .section-logo {
+      display: none !important;
+    }
+
+    .appendix-note {
+      margin: 0 0 18px;
+      color: var(--maroon);
+      font-size: 1.12rem;
+      line-height: 1.95;
+      font-weight: 800;
+    }
+
+    .appendix-note strong {
+      color: #b3212d;
+      font-weight: 900;
+    }
+
+    .appendix-number {
+      width: 7%;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #b3212d;
+      background: rgba(255,255,255,.62);
+    }
+
+    .appendix-title {
+      width: 19%;
+      text-align: center;
+      font-size: 1.32rem;
+      line-height: 1.8;
+      font-weight: 900;
+      color: var(--ink);
+      background: rgba(244,239,225,.82);
+    }
+
+    .appendix-content {
+      width: 50%;
+      font-size: 1.08rem;
+      line-height: 2;
+      font-weight: 700;
+      color: #352b24;
+    }
+
+    .appendix-evidence {
+      width: 24%;
+      text-align: center;
+      background: rgba(255,255,255,.7);
+    }
+
+    @media (max-width: 1180px) {
+      .pages-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .topbar-inner {
+        border-radius: 26px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .topnav {
+        justify-content: center;
+      }
+
+      .hero-head {
+        padding-top: 20px;
+      }
+
+      .shell {
+        width: min(100% - 18px, 1480px);
+      }
+
+      .section-block {
+        padding: 18px;
+      }
+
+      .title-mark {
+        width: 50px;
+        height: 50px;
+      }
+
+      .section-intro {
+        padding-top: 2px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand img {
+        width: 58px;
+        height: 72px;
+      }
+
+      .brand-copy .sub,
+      .hero-head p,
+      .section-head p,
+      .page-caption,
+      .footer-note {
+        font-size: .92rem;
+      }
+
+      .topnav a {
+        padding: 9px 14px;
+        font-size: .94rem;
+      }
+
+      thead th, tbody td {
+        padding: 16px 14px;
+      }
+
+      .col-section {
+        font-size: 1.55rem;
+      }
+
+      .col-desc {
+        font-size: 1.02rem;
+      }
+
+      .link-badge {
+        min-width: 120px;
+        padding: 10px 14px;
+      }
+
+      .section-intro-text p {
+        font-size: 1.08rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img alt="شعار أجاويد 4" src="./ajawid-logo.webp"/>
+          <div class="brand-copy">
+            <p class="eyebrow">أجاويد ٤ — فريق جُرّة</p>
+            <h1>التقرير الختامي للمبادرة</h1>
+            <p class="sub">واجهة تفاعلية مرتبة لعرض الصفحات الافتتاحية ثم الأقسام</p>
+          </div>
+        </div>
+
+        <nav aria-label="التنقل السريع" class="topnav">
+          <a href="#opening-pages">الصفحات الافتتاحية</a>
+          <a href="#identity-section">القسم الأول</a>
+          <a href="#planning-section">القسم الثاني</a>
+          <a href="#training-section">القسم الثالث</a>
+          <a href="#media-section">القسم الرابع</a>
+          <a href="#risk-section">القسم الخامس</a>
+          <a href="#impact-section">القسم السادس</a>
+          <a href="#sustainability-section">القسم السابع</a>
+          <a href="#appendix-section">القسم الثامن</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-block" id="opening-pages">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>الصفحات الافتتاحية</h3>
+          </div>
+        </div>
+        <div class="section-chip">البداية البصرية للتقرير</div>
+      </div>
+
+      <div class="pages-grid">
+        <article class="page-card">
+          <div class="page-top">
+            <div class="page-index">١</div>
+          </div>
+          <div class="page-media">
+            <img alt="واجهة التقرير" src="./cover.png"/>
+          </div>
+        </article>
+
+        <article class="page-card">
+          <div class="page-top">
+            <div class="page-index">٢</div>
+          </div>
+          <div class="page-media">
+            <img alt="صور الملوك" src="./kings.png"/>
+          </div>
+        </article>
+
+        <article class="page-card">
+          <div class="page-top">
+            <div class="page-index">٣</div>
+          </div>
+          <div class="page-media">
+            <img alt="كلمة سمو الأمير" src="./prince.png"/>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block" id="identity-section">
+      <div class="identity-head">
+        <div>
+          <h3>القسم الأول: الهوية</h3>
+          <p>« جُرّة: تجسيدٌ للقيم، وانطلاقةٌ نحو الأثر. »</p>
+        </div>
+        <img alt="شعار جرة" class="section-logo" src="./ajawid-logo.webp"/>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">الهوية</td>
+                <td class="col-desc">
+                  من فلسفتنا أن التعليم بصمةٌ لا تمحوها الأيام، وهويتنا تجسيدٌ لممارساتٍ مُلهمةٍ تجاوزت جدران
+                  الصفوف المدرسية؛ لتسكن وجدان المجتمع، وتصنع فصلًا جديدًا من الإبداع المستدام.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgCFz20iJWMVTJtXxbNChr3uAXbcd8hYPz6pK1sflZ9yW2A?e=iyKjsa" rel="noopener noreferrer" target="_blank">فتح ملف الهوية</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="planning-section">
+      <div class="identity-head">
+        <div>
+          <h3>القسم الثاني: التخطيط</h3>
+          <p>« رسم المسارات: حيث تلتقي الرؤية بالمنهجية. »</p>
+        </div>
+        <img alt="شعار جرة" class="section-logo" src="./ajawid-logo.webp"/>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">التخطيط</td>
+                <td class="col-desc">
+                  من أهدافنا بناء الخطة الاستراتيجية لمبادرة جُرّة وفق منهجية واضحة تضمن تكامل الجهود،
+                  واستثمار الموارد، وتحقيق النتائج المستهدفة بكل كفاءة وفاعلية وفق الزمن المحدد.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgCJ8v4y2oXDTZBQEr57fYtdAWMaLtr8ELUBpufCmPuPpuY?e=l8fP51" rel="noopener noreferrer" target="_blank">فتح ملف التخطيط</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="training-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم الثالث: التدريب</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“بناء القدرات: استثمارٌ في الإنسان، لتمكين المجتمع.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">التدريب</td>
+                <td class="col-desc">
+                  من اهتماماتنا بناء القدرات البشرية لإعداد المشاركين ليكونوا عناصر فاعلة في نقل
+                  التجربة واستمرارها، وتأهيل فرق العمل والمتطوعين لصناعة سفراء للمبادرة،
+                  وتمكينهم من التطوير.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgCO1ee5PrIMQJDTkEmkrgNvAVFL_jc8S3zIZlg0bfcuRXs?e=cT3VVS" rel="noopener noreferrer" target="_blank">فتح ملف التدريب</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="media-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم الرابع: الإعلام</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“جسورٌ من التفاعل: لإيصال رسالتنا بكل فخرٍ ووضوح.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">الإعلام</td>
+                <td class="col-desc">
+                  من أولوياتنا الاهتمام بالتواصل المجتمعي والإعلامي للتعريف بمبادرة جُرَّة ونشر أهدافها،
+                  وإبراز منجزاتها عبر القنوات الفاعلة والمتنوعة، بهدف تعزيز التواصل،
+                  ودعم التفاعل المجتمعي النوعي.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgDHWkbuCaylR7MjGEuSylPyAa-sBl9u0QLFuJE-EBkzviQ?e=x563zo" rel="noopener noreferrer" target="_blank">فتح ملف الإعلام</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="risk-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم الخامس: إدارة المخاطر</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“استباق التحديات: مرونةٌ تضمن استمرارية النجاح.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">إدارة المخاطر</td>
+                <td class="col-desc">
+                  من منهجيتنا العمل على إدارة المخاطر لتعزيز المرونة التشغيلية، وحماية مكتسبات المبادرة،
+                  لضمان الاستغلال الكفء للموارد، مما يسهم في تجاوز التحديات دون التأثير على جودة المخرجات.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgAgKMIBxV_gRZptTo10m6PRAVLE75Ef5T8-MLoad9lLn3M?e=hDmXfR" rel="noopener noreferrer" target="_blank">فتح ملف إدارة المخاطر</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="impact-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم السادس: الأثر</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“بصمة جُرَّة: أثرٌ مستدام يلامس حياة المجتمع.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">الأثر</td>
+                <td class="col-desc">
+                  من مبادئنا بناء القدرات المستدامة حيث تمثل مبادرة جُرَّة حجر الزاوية في نقل الأثر من مرحلة
+                  العطاء المباشر إلى مرحلة التمكين الفاعل للموهبة لترجمتها في صورة أثر مجتمعي ملموس.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgDylpGL1CefS4iJIjvoUdHkAd2TGm0nxbbEOvOoGXIQ_tY?e=UDVApI" rel="noopener noreferrer" target="_blank">فتح ملف الأثر</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="sustainability-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم السابع: الاستدامة</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“آفاقٌ متجددة: نحو مستقبلٍ يبني ولا ينتهي.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">الاستدامة</td>
+                <td class="col-desc">
+                  من مرتكزاتنا في مبادرة جُرَّة الانتقال من مفهوم الحدث المؤقت إلى منظومة تنموية مستمرة،
+                  تركز على استمرار الأثر التعليمي، والمجتمعي على المدى الطويل لضمان استدامة الأثر الفاعل.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgC2OiKZAp29RYwBfUbSPJRmAR0XahaUl0evBujkJx9YRRU?e=eNv1JU" rel="noopener noreferrer" target="_blank">فتح ملف الاستدامة</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block" id="appendix-section">
+      <div class="section-head">
+        <div class="title-wrap">
+          <div class="title-mark">✦</div>
+          <div>
+            <h3>القسم الثامن: الملاحق</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-intro">
+        <div class="section-intro-text">
+          <p>“التوثيق الداعم: شواهد من رحلة العطاء.”</p>
+        </div>
+      </div>
+
+      <div class="table-shell">
+        <div style="overflow:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>القسم</th>
+                <th>الوصف</th>
+                <th>الرابط</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-section">الملاحق</td>
+                <td class="col-desc">
+                  من دوافعنا لاستكمال رحلة مبادرة جُرَّة حفظ تفاصيل الأثر، وتوثيق الخطوات الإجرائية التي
+                  شكّلت قوام هذا العمل، نستعرض في هذا القسم ملاحق التقرير الختامي.
+                </td>
+                <td class="col-link">
+                  <a class="link-badge" href="https://asrgirls-my.sharepoint.com/:f:/g/personal/talent_aseer_edu_asrg_moe_gov_sa/IgDFtmSRMqSgQbdRU6xwvc3dAeiLRZmBCVyTdlHwoi1OJuA?e=iRslqF" rel="noopener noreferrer" target="_blank">فتح ملف الملاحق</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
